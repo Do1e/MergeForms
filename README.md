@@ -16,7 +16,7 @@
   ```
 * Run
   ```shell
-    python ui.py
+  python ui.py
   ```
 * Take the above example as an example, enter the information.
   ![1664718425633](image/README/1664718425633.png)
