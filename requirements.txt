@@ -1,0 +1,5 @@
+pandas
+chardet
+tkinter
+openpyxl # xlsx support
+xlwt # xls support
