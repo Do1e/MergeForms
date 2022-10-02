@@ -20,3 +20,5 @@
   ```
 * Take the above example as an example, enter the information.
   ![1664718425633](image/README/1664718425633.png)
+
+* The project has not been strictly tested. If there is any problem, submit issues.
