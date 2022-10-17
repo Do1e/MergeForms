@@ -18,5 +18,17 @@
   ```
 * 以上述示例为例，输入信息。
   ![1664718425633](image/README/1664718425633.png)
+* 可以在`config.json`中设置默认值，比如：
+  ```json
+  {
+    "from": "./example/from.xlsx",
+    "to": "./example/to.xlsx",
+    "fromsheet": "Sheet1",
+    "tosheet": "Sheet1",
+    "baserow": "姓名",
+    "updatecol": "是否党员",
+    "savename": "./example/result.xlsx"
+  }
+  ```
 
 * 尚未经过严格测试，如有问题欢迎提issue。

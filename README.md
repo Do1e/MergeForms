@@ -20,5 +20,17 @@
   ```
 * Take the above example as an example, enter the information.
   ![1664718425633](image/README/1664718425633.png)
+* You can set default value in `config.json`, for example:
+  ```json
+  {
+    "from": "./example/from.xlsx",
+    "to": "./example/to.xlsx",
+    "fromsheet": "Sheet1",
+    "tosheet": "Sheet1",
+    "baserow": "姓名",
+    "updatecol": "是否党员",
+    "savename": "./example/result.xlsx"
+  }
+  ```
 
 * The project has not been strictly tested. If there is any problem, submit issues.

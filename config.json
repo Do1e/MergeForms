@@ -1,0 +1,9 @@
+{
+    "from": "C:/Users/do1e/Desktop/from.xlsx",
+    "to": "C:/Users/do1e/Desktop/to.xlsx",
+    "fromsheet": "Sheet1",
+    "tosheet": "Sheet1",
+    "baserow": "姓名",
+    "updatecol": "格式",
+    "savename": "C:/Users/do1e/Desktop/更新后.xlsx"
+}

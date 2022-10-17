@@ -2,46 +2,67 @@
 import tkinter
 import tkinter.messagebox
 import time
+import json
 from form import Form
 
 class UI(object):
     def __init__(self):
+        try:
+            with open('config.json', 'r', encoding='gbk') as f:
+                config = json.load(f)
+        except:
+            config = {}
+        if 'from' not in config:
+            config['from'] = ''
+        if 'to' not in config:
+            config['to'] = ''
+        if 'fromsheet' not in config:
+            config['fromsheet'] = 0
+        if 'tosheet' not in config:
+            config['tosheet'] = 0
+        if 'baserow' not in config:
+            config['baserow'] = ''
+        if 'updatecol' not in config:
+            config['updatecol'] = ''
+        if 'savename' not in config:
+            config['savename'] = 'result.xlsx'
+
         self.root = tkinter.Tk()
         self.root.title('MergeForms')
         self.root.resizable(0, 0)
         self.fromTitle = tkinter.Label(self.root, text='the file path of the form to be updated from:')
         self.fromTitle.grid(row=0, column=0, sticky=tkinter.W)
-        self.fromInputBox = tkinter.Entry(width=50)
+        self.fromInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['from']))
         self.fromInputBox.grid(row=1, column=0)
 
         self.toTitle = tkinter.Label(self.root, text='the file path of the form to be updated:')
         self.toTitle.grid(row=0, column=1, sticky=tkinter.W)
-        self.toInputBox = tkinter.Entry(width=50)
+        self.toInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['to']))
         self.toInputBox.grid(row=1, column=1)
 
         self.sheetnameFromTitle = tkinter.Label(self.root, text='the sheet name of the form to be updated from:')
         self.sheetnameFromTitle.grid(row=2, column=0, sticky=tkinter.W)
-        self.sheetnameFromInputBox = tkinter.Entry(width=50)
+        self.sheetnameFromInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['fromsheet']))
         self.sheetnameFromInputBox.grid(row=3, column=0)
 
         self.sheetnameToTitle = tkinter.Label(self.root, text='the sheet name of the form to be updated:')
         self.sheetnameToTitle.grid(row=2, column=1, sticky=tkinter.W)
-        self.sheetnameToInputBox = tkinter.Entry(width=50)
+        self.sheetnameToInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['tosheet']))
         self.sheetnameToInputBox.grid(row=3, column=1)
 
         self.baseTitle = tkinter.Label(self.root, text='find based on which column:')
         self.baseTitle.grid(row=4, column=0, sticky=tkinter.W)
-        self.baseInputBox = tkinter.Entry(width=50)
+        self.baseInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['baserow']))
         self.baseInputBox.grid(row=5, column=0)
 
         self.updateColTitle = tkinter.Label(self.root, text='the column to be updated:')
         self.updateColTitle.grid(row=4, column=1, sticky=tkinter.W)
-        self.updateColInputBox = tkinter.Entry(width=50)
+        self.updateColInputBox = tkinter.Entry(width=50, textvariable=tkinter.StringVar(value=config['updatecol']))
         self.updateColInputBox.grid(row=5, column=1)
 
         self.saveTitle = tkinter.Label(self.root, text='the file path to save the result:')
         self.saveTitle.grid(row=6, column=0, columnspan=2, sticky=tkinter.W)
-        self.saveInputBox = tkinter.Entry(width=100)
+        self.saveInputBox = tkinter.Entry(width=100, textvariable=tkinter.StringVar(value=config['savename']))
         self.saveInputBox.grid(row=7, column=0, columnspan=2)
 
         self.mergeButton = tkinter.Button(self.root, text='Merge', command=self.merge)
