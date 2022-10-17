@@ -32,5 +32,6 @@
     "savename": "./example/result.xlsx"
   }
   ```
+  Note: If the config file contains Chinese, please use `gbk` encoding.
 
 * The project has not been strictly tested. If there is any problem, submit issues.

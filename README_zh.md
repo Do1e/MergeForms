@@ -30,5 +30,6 @@
     "savename": "./example/result.xlsx"
   }
   ```
+  注：如果文件中包含中文，请使用`gbk`编码。
 
 * 尚未经过严格测试，如有问题欢迎提issue。
