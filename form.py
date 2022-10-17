@@ -26,32 +26,31 @@ class Form(object):
         else:
             self.data = pd.read_excel(filename, index_col=base_col, sheet_name=sheet_name, **kwargs)
 
-    def update_data(self, row:int|str, col:int|str, value:any):
+    def update_data(self, row, col, value:any):
         """
-        update_data(row:int|str, col:int|str, value:any) -> None.
+        update_data(row, col, value:any) -> None.
         @param:
-            row: int|str, the row index
-            col: int|str, the column index
+            row, the row index
+            col, the column index
             value: any, the value to be updated
         """
-        if type(row) == str:
-            try:
-                row = self.data.index.get_loc(row)
-            except KeyError:
-                raise KeyError('The row "%d" is not found.' % row)
-        if type(col) == str:
-            try:
-                col = self.data.columns.get_loc(col)
-            except KeyError:
-                raise KeyError('The column "%d" is not found.' % col)
+        try:
+            row = self.data.index.get_loc(row)
+        except KeyError:
+            raise KeyError('The row "%s" is not found.' % row)
+        try:
+            col = self.data.columns.get_loc(col)
+        except KeyError:
+            self.data[col] = ''
+            col = self.data.columns.get_loc(col)
         self.data.iloc[row, col] = value
 
-    def merge_from(self, form:'Form', update_col:str) -> int:
+    def merge_from(self, form:'Form', update_col) -> int:
         """
         merge_from(form:'Form', update_col:str) -> int.
         @param:
             form: 'Form', the form where the data is updated from
-            update_col: str, the column to be updated
+            update_col: the column to be updated
         @return:
             the number of updated items
         """
