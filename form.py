@@ -7,9 +7,9 @@ def getEncodeing(filename):
         return chardet.detect(f.read())['encoding']
 
 class Form(object):
-    def __init__(self, filename: str, base_col:int|str = None, sheet_name:int|str = 0, **kwargs):
+    def __init__(self, filename: str, base_col=None, sheet_name=0, **kwargs):
         """
-        Form(filename: str, base_col:int|str = None, sheet_name:int|str = 0, **kwargs) -> None.
+        Form(filename: str, base_col=None, sheet_name=0, **kwargs) -> None.
         @param:
             filename: str, the file path
             base_col: int|str, find based on which column
