@@ -1,4 +1,5 @@
 pandas
 chardet
 openpyxl # xlsx support
-xlwt # xls support
+xlrd # xls support
+pyqt6

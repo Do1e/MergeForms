@@ -1,37 +1,15 @@
-# Merge Forms
+# 表格合并
 
-[Chinese README](README_zh.md)
-
-## Introduction
-* Worried about the scene below?
+## 介绍
+* 还在为下图中的场景而发愁吗？
   ![1664683369356](image/README/1664683369356.png)
-* Welcome to try this project, merge the data in `from.csv` to `to.csv`, and achieve the following effect.
+* 欢迎尝试本项目，将`from.csv`中的数据合并到`to.csv`中，实现如下效果。
   ![1664683411461](image/README/1664683411461.png)
-* Support format: from and to both support csv/xlsx/xls format.
+* 支持格式：from和to都支持csv/xlsx/xls格式。
 
-## Usage
-* Install dependencies
-  ```shell
-  pip install -r requirements.txt
-  ```
-* Run
-  ```shell
-  python ui.py
-  ```
-* Take the above example as an example, enter the information.
-  ![1664718425633](image/README/1664718425633.png)
-* You can set default value in `config.json`, for example:
-  ```json
-  {
-    "from": "./example/from.xlsx",
-    "to": "./example/to.xlsx",
-    "fromsheet": "Sheet1",
-    "tosheet": "Sheet1",
-    "baserow": "姓名",
-    "updatecol": "是否党员",
-    "savename": "./example/result.xlsx"
-  }
-  ```
-  Note: If the config file contains Chinese, please use `gbk` encoding.
+## 使用方法
+* 从[release](https://github.com/Do1e/MergeForms/releases/latest)下载最新版本的exe文件。
+* 或者`python ui.py`运行。
 
-* The project has not been strictly tested. If there is any problem, submit issues.
+
+* 尚未经过严格测试，如有问题欢迎提issue。
